@@ -50,7 +50,7 @@ const HeroSection: React.FC = () => {
             >
               <div className="rounded-3xl overflow-hidden shadow-xl h-1/2">
                 <img 
-                  src="home.i.jpg" 
+                  src="https://res.cloudinary.com/dx0r0pbgb/image/upload/v1749035613/home.i_uey54o.png" 
                   alt="Professional service provider" 
                   className="w-full h-64 md:h-96 object-cover"
                 />

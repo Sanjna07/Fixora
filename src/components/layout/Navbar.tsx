@@ -116,7 +116,7 @@ const Navbar: React.FC = () => {
             transition={{ type: 'spring', stiffness: 400, damping: 25 }}
           >
             <motion.img
-              src="Fixora.logo.png" 
+              src="https://res.cloudinary.com/dx0r0pbgb/image/upload/v1749035535/Fixora.logo_isyr5s.png" 
               className="h-12 w-12 object-contain align-middle"
               whileHover={{ 
                 rotate: [0, 5, -5, 0],
