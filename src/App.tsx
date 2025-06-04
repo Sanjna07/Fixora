@@ -11,6 +11,7 @@ import ProfilePage from './pages/ProfilePage';
 import { ThemeProvider } from './context/ThemeContext';
 import { BookingProvider } from './context/BookingContext';
 import { AuthProvider } from './context/AuthContext';
+import AboutPage from './components/About';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
                   <Route path="/services" element={<ServicesPage />} />
                   <Route path="/services/:id" element={<ServiceDetailPage />} />
                   <Route path="/login" element={<AuthPage />} />
+                  <Route path="/about" element={<AboutPage />} />
                   <Route path="/profile" element={<ProfilePage />} />
                 </Routes>
               </main>
