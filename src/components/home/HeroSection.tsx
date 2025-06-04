@@ -20,8 +20,8 @@ const HeroSection: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4 text-gray-900 dark:text-white leading-tight">
-                Professional Services <span className="text-primary-600 dark:text-primary-500">At <br /> Your Fingertips</span>
+              <h1 className="text-3xl md:text-4xl lg:text-6xl font-display font-bold mb-4 text-gray-900 dark:text-white leading-tight">
+                Professional Services <span className="text-primary-600 dark:text-primary-500"><br />At Your Fingertips</span>
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 max-w-lg">
                 Book expert service professionals with just a few clicks. Quality work, transparent pricing, and satisfaction guaranteed.

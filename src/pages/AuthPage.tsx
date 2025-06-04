@@ -15,7 +15,7 @@ const AuthPage: React.FC = () => {
           >
             <div className="max-w-md mx-auto md:mx-0">
               <h1 className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">
-                Welcome to <span className="text-primary-600 dark:text-primary-500">ServiceHub</span>
+                Welcome to <span className="text-primary-600 dark:text-primary-500">Fixora</span>
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
                 Sign in to manage your bookings, track service history, and enjoy exclusive benefits.
@@ -37,7 +37,7 @@ const AuthPage: React.FC = () => {
               
               <div className="hidden md:block">
                 <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-3">
-                  Why join ServiceHub?
+                  Why join Fixora?
                 </h3>
                 <ul className="space-y-3">
                   {[

@@ -21,14 +21,14 @@ const testimonials: Testimonial[] = [
     id: 2,
     name: 'Vivaan Mehta',
     role: 'Business Owner',
-    content: 'We hired ServiceHub for our office renovation and they delivered beyond expectations. Professional, efficient, and high-quality work.',
+    content: 'We hired Fixora for our office renovation and they delivered beyond expectations. Professional, efficient, and high-quality work.',
     avatar: 'https://i.pinimg.com/736x/da/31/38/da313829618ce49ebec8517389ff6016.jpg'
   },
   {
     id: 3,
     name: 'Diya Singh',
     role: 'Interior Designer',
-    content: 'I regularly recommend ServiceHub to my clients. Their plumbing and electrical services are reliable and their professionals are always courteous.',
+    content: 'I regularly recommend Fixora to my clients. Their plumbing and electrical services are reliable and their professionals are always courteous.',
     avatar: 'https://i.pinimg.com/736x/85/43/66/8543664f4de253fbd53c0fce2baed433.jpg'
   }
 ];
