@@ -12,6 +12,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import { BookingProvider } from './context/BookingContext';
 import { AuthProvider } from './context/AuthContext';
 import AboutPage from './components/About';
+import ContactUs from './components/Contact';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
                   <Route path="/login" element={<AuthPage />} />
                   <Route path="/about" element={<AboutPage />} />
                   <Route path="/profile" element={<ProfilePage />} />
+                  <Route path="/contact" element={<ContactUs />} />
                 </Routes>
               </main>
               <Footer />

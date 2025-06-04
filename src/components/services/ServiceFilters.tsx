@@ -137,7 +137,7 @@ const ServiceFilters: React.FC = () => {
       }}
     >
       {/* Mobile Header */}
-      <div className="lg:hidden flex items-center justify-between p-4 border-b border-gray-200 dark:border-dark-700 bg-white dark:bg-dark-800">
+      <div className="lg:hidden flex items-center justify-between p-4 border-b border-gray-200 dark:border-dark-700 bg-white dark:bg-dark-800 flex-shrink-0">
         <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
           Filters
         </h3>
@@ -149,103 +149,106 @@ const ServiceFilters: React.FC = () => {
         </button>
       </div>
 
-      {/* Categories Section */}
-      <div className="p-4 border-b border-gray-100 dark:border-dark-700 flex-shrink-0">
-        <h3 className="text-base font-semibold text-gray-800 dark:text-white mb-3">
-          Categories
-        </h3>
-        
-        <div className="max-h-48 overflow-y-auto space-y-1 pr-2 scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-dark-600">
-          <button
-            className={`w-full text-left px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-              !categoryParam 
-                ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400' 
-                : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-dark-700'
-            }`}
-            onClick={() => handleCategoryChange(null)}
-          >
-            All Services
-          </button>
+      {/* Scrollable Content */}
+      <div className="flex-1 overflow-y-auto">
+        {/* Categories Section */}
+        <div className="p-4 border-b border-gray-100 dark:border-dark-700">
+          <h3 className="text-base font-semibold text-gray-800 dark:text-white mb-3">
+            Categories
+          </h3>
           
-          {categories.map((category, index) => (
-            <motion.button
-              key={category.id}
+          <div className="max-h-48 overflow-y-auto space-y-1 pr-2 scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-dark-600">
+            <button
               className={`w-full text-left px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                categoryParam === category.id
+                !categoryParam 
                   ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400' 
                   : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-dark-700'
               }`}
-              onClick={() => handleCategoryChange(category.id)}
-              whileHover={{ x: 2 }}
-              whileTap={{ scale: 0.98 }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: index * 0.05 }}
+              onClick={() => handleCategoryChange(null)}
             >
-              {category.name}
-            </motion.button>
-          ))}
-        </div>
-      </div>
-
-      {/* Price Range Section */}
-      <div className="p-6">
-        <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">
-          Price Range
-        </h3>
-        
-        <div className="space-y-4">
-          <div className="flex justify-between text-sm text-gray-600 dark:text-gray-400 mb-2">
-            <span>₹{priceRange[0]}</span>
-            <span>₹{priceRange[1]}</span>
+              All Services
+            </button>
+            
+            {categories.map((category, index) => (
+              <motion.button
+                key={category.id}
+                className={`w-full text-left px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  categoryParam === category.id
+                    ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400' 
+                    : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-dark-700'
+                }`}
+                onClick={() => handleCategoryChange(category.id)}
+                whileHover={{ x: 2 }}
+                whileTap={{ scale: 0.98 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: index * 0.05 }}
+              >
+                {category.name}
+              </motion.button>
+            ))}
           </div>
+        </div>
+
+        {/* Price Range Section */}
+        <div className="p-4 lg:p-6">
+          <h3 className="text-base lg:text-lg font-semibold text-gray-800 dark:text-white mb-3 lg:mb-4">
+            Price Range
+          </h3>
           
-          <div className="space-y-3">
-            <div>
-              <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">
-                Minimum
-              </label>
-              <input
-                type="range"
-                min="0"
-                max="5000"
-                step="50"
-                value={priceRange[0]}
-                onChange={(e) => handlePriceChange(e, 0)}
-                className="w-full h-2 bg-gray-200 dark:bg-dark-600 rounded-lg appearance-none cursor-pointer accent-primary-600"
-              />
+          <div className="space-y-3 lg:space-y-4">
+            <div className="flex justify-between text-sm text-gray-600 dark:text-gray-400 mb-2">
+              <span>₹{priceRange[0]}</span>
+              <span>₹{priceRange[1]}</span>
             </div>
             
-            <div>
-              <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">
-                Maximum
-              </label>
-              <input
-                type="range"
-                min="0"
-                max="5000"
-                step="50"
-                value={priceRange[1]}
-                onChange={(e) => handlePriceChange(e, 1)}
-                className="w-full h-2 bg-gray-200 dark:bg-dark-600 rounded-lg appearance-none cursor-pointer accent-primary-600"
-              />
+            <div className="space-y-3">
+              <div>
+                <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">
+                  Minimum
+                </label>
+                <input
+                  type="range"
+                  min="0"
+                  max="5000"
+                  step="50"
+                  value={priceRange[0]}
+                  onChange={(e) => handlePriceChange(e, 0)}
+                  className="w-full h-2 bg-gray-200 dark:bg-dark-600 rounded-lg appearance-none cursor-pointer accent-primary-600"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">
+                  Maximum
+                </label>
+                <input
+                  type="range"
+                  min="0"
+                  max="5000"
+                  step="50"
+                  value={priceRange[1]}
+                  onChange={(e) => handlePriceChange(e, 1)}
+                  className="w-full h-2 bg-gray-200 dark:bg-dark-600 rounded-lg appearance-none cursor-pointer accent-primary-600"
+                />
+              </div>
             </div>
-          </div>
-          
-          <motion.div
-            whileHover={{ scale: 1.02 }} 
-            whileTap={{ scale: 0.98 }}
-            className="pt-2"
-          >
-            <Button 
-              onClick={applyFilters} 
-              variant="primary" 
-              size="sm" 
-              fullWidth
+            
+            <motion.div
+              whileHover={{ scale: 1.02 }} 
+              whileTap={{ scale: 0.98 }}
+              className="pt-2"
             >
-              Apply Filters
-            </Button>
-          </motion.div>
+              <Button 
+                onClick={applyFilters} 
+                variant="primary" 
+                size="sm" 
+                fullWidth
+              >
+                Apply Filters
+              </Button>
+            </motion.div>
+          </div>
         </div>
       </div>
     </motion.div>
@@ -309,7 +312,7 @@ const ServiceFilters: React.FC = () => {
             
             {/* Sidebar */}
             <motion.div
-              className="fixed top-0 left-0 h-full w-80 bg-white dark:bg-dark-800 z-50 lg:hidden overflow-y-auto"
+              className="fixed top-0 left-0 h-full w-80 bg-white dark:bg-dark-800 z-50 lg:hidden overflow-hidden"
               variants={sidebarVariants}
               initial="hidden"
               animate="visible"
