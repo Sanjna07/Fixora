@@ -27,7 +27,7 @@ const HeroSection: React.FC = () => {
                 Book expert service professionals with just a few clicks. Quality work, transparent pricing, and satisfaction guaranteed.
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                <Link to="/services">
+                <Link to="/login">
                   <Button size="lg">
                     Browse Services
                   </Button>
