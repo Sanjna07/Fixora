@@ -78,7 +78,7 @@ const ContactUs: React.FC = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      details: 'support@yourservice.com',
+      details: 'support@fixoraservice.com',
       subtitle: 'We\'ll respond within 24 hours'
     },
     {
